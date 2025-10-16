@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadelMatch • Complejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand"><div class="logo">🎾</div> PadelMatch • Complejo</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <span id="session-chip" class="muted"></span>
+        <button id="btn-home" class="btn">Inicio</button>
+        <button id="btn-logout" class="btn btn-danger">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h3>Mi complejo</h3>
+      <div id="perfil-nombre" class="muted"></div>
+    </div>
+
+    <div class="card">
+      <h3>Publicar Torneo</h3>
+      <form id="form-torneo">
+        <div class="row">
+          <input type="text" name="direccion" placeholder="Dirección" required />
+          <select name="categoria" required>
+            <option value="">Categoría</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+        <div class="row">
+          <input type="number" name="parejas" placeholder="Cantidad de parejas" min="2" required />
+          <input type="date" name="fecha" required />
+        </div>
+        <input type="text" name="premios" placeholder="Premios" required />
+        <button type="submit" class="btn btn-primary">Publicar</button>
+      </form>
+    </div>
+
+    <div class="card" style="grid-column: 1 / -1;">
+      <h3>Mis torneos</h3>
+      <div id="lista-torneos" class="list"></div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
+
+

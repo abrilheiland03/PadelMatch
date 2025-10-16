@@ -1,0 +1,8 @@
+[
+  {"nombre":"Lucia","apellido":"Gonzalez","categoria":"3","usuario":"lucia","password":"1234","rol":"jugador"},
+  {"nombre":"Martin","apellido":"Perez","categoria":"6","usuario":"martin","password":"abcd","rol":"jugador"},
+  {"nombre":"Padel Centro","apellido":"-","categoria":"-","usuario":"centro","password":"centro","rol":"complejo"},
+  {"nombre":"TopSpin","apellido":"-","categoria":"-","usuario":"topspin","password":"top","rol":"local"}
+]
+
+

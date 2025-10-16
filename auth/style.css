@@ -1,0 +1,14 @@
+:root { --bg:#0b0f0e; --card:#121816; --muted:#9fb3a7; --text:#e8f3ec; --brand:#23c469; --brand-2:#1aa95a; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:'Poppins',system-ui; background: radial-gradient(800px 400px at 100% -10%, #163d2b 0%, transparent 60%), var(--bg); color:var(--text); }
+.login-shell { min-height: 100dvh; display:grid; place-items:center; padding:20px; }
+.login-card { width:min(560px, 96vw); background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:26px; box-shadow:0 10px 40px rgba(0,0,0,.35); display:grid; gap:16px; }
+.brand { display:flex; align-items:center; gap:10px; font-weight:700; }
+.logo { width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; color:#0c1511; font-weight:800; }
+form { display:grid; gap:10px; }
+input, select { background:#0f1513; color:var(--text); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:10px 12px; font-size:1rem; }
+.btn { border:1px solid rgba(255,255,255,0.1); background:#0f1513; color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; }
+.btn-primary { background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#0c1511; border:none; }
+.msg { min-height: 20px; color:#ffd36e; font-size:.95rem; }
+
+

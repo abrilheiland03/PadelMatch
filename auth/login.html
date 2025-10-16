@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadelMatch • Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="login-shell">
+    <div class="login-card">
+      <div class="brand"><div class="logo">🎾</div> PadelMatch</div>
+      <h2>Iniciar sesión</h2>
+      <form id="form-login">
+        <input type="text" name="usuario" placeholder="Usuario" required />
+        <input type="password" name="password" placeholder="Contraseña" required />
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+      <div id="msg" class="msg" role="status"></div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button id="btn-back" class="btn">Volver</button>
+        <button id="btn-register" class="btn">Crear cuenta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seed de usuarios para file:// -->
+  <script id="seed-usuarios" type="application/json">[
+    {"nombre":"Lucia","apellido":"Gonzalez","categoria":"3","usuario":"lucia","password":"1234","rol":"jugador"},
+    {"nombre":"Martin","apellido":"Perez","categoria":"6","usuario":"martin","password":"abcd","rol":"jugador"},
+    {"nombre":"Padel Centro","apellido":"-","categoria":"-","usuario":"centro","password":"centro","rol":"complejo"},
+    {"nombre":"TopSpin","apellido":"-","categoria":"-","usuario":"topspin","password":"top","rol":"local"}
+  ]</script>
+
+  <script src="./login.js"></script>
+</body>
+</html>
+
+

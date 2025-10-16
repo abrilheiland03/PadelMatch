@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadelMatch • Crear cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="login-shell">
+    <div class="login-card">
+      <div class="brand"><div class="logo">🎾</div> PadelMatch</div>
+      <h2>Crear cuenta</h2>
+      <form id="form-register">
+        <div style="display:grid; grid-template-columns: 1fr; gap:10px;">
+          <select name="rol" id="sel-rol" required>
+            <option value="">Rol</option>
+            <option value="jugador">Jugador</option>
+            <option value="complejo">Complejo / Cancha</option>
+            <option value="local">Local / Marca</option>
+          </select>
+        </div>
+
+        <div id="fields-jugador" style="display:none; margin-top:8px;">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <input type="text" name="nombre" placeholder="Nombre" />
+            <input type="text" name="apellido" placeholder="Apellido" />
+          </div>
+          <div>
+            <select name="categoria">
+              <option value="">Categoría (jugadores)</option>
+              <option value="1">1 (Primera)</option>
+              <option value="2">2 (Segunda)</option>
+              <option value="3">3 (Tercera)</option>
+              <option value="4">4 (Cuarta)</option>
+              <option value="5">5 (Quinta)</option>
+              <option value="6">6 (Sexta)</option>
+              <option value="7">7 (Séptima)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="fields-complejo" style="display:none; margin-top:8px;">
+          <div style="display:grid; grid-template-columns: 1fr; gap:10px;">
+            <input type="text" name="nombreComplejo" placeholder="Nombre del complejo" />
+            <input type="text" name="direccionComplejo" placeholder="Dirección del complejo" />
+          </div>
+        </div>
+
+        <div id="fields-local" style="display:none; margin-top:8px;">
+          <div style="display:grid; grid-template-columns: 1fr; gap:10px;">
+            <input type="text" name="nombreLocal" placeholder="Nombre del local / marca" />
+            <input type="text" name="direccionLocal" placeholder="Dirección del local (opcional)" />
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:8px;">
+          <input type="text" name="usuario" placeholder="Usuario" required />
+          <input type="password" name="password" placeholder="Contraseña" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Registrarme</button>
+      </form>
+      <div class="msg" style="margin-top:6px;">Para escribir en el archivo real <code>data/usuarios.json</code>, primero vincúlalo:</div>
+      <div style="display:flex; gap:8px; margin-top:6px; flex-wrap:wrap;">
+        <button id="btn-link-file" class="btn">Vincular usuarios.json</button>
+        <span id="link-status" class="msg"></span>
+      </div>
+      <div id="msg" class="msg" role="status"></div>
+      <button id="btn-back" class="btn">Volver</button>
+    </div>
+  </div>
+
+  <script src="./register.js"></script>
+</body>
+</html>
+
+

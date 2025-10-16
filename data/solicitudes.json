@@ -1,0 +1,24 @@
+[
+  {
+    "id": "seed-1",
+    "creador": "Lucia",
+    "jugadores": 2,
+    "categoria": "Intermedio",
+    "direccion": "Club Padel Centro, Córdoba",
+    "horario": "2025-10-20T19:00",
+    "inscriptos": ["Agus"],
+    "cuposRestantes": 1
+  },
+  {
+    "id": "seed-2",
+    "creador": "Martin",
+    "jugadores": 1,
+    "categoria": "Principiante",
+    "direccion": "Poli General Paz",
+    "horario": "2025-10-21T18:30",
+    "inscriptos": [],
+    "cuposRestantes": 1
+  }
+]
+
+

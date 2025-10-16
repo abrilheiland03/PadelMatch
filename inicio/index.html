@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadelMatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand"><div class="logo">🎾</div> PadelMatch</div>
+      <div class="nav-actions">
+        <span id="session-chip" class="chip" style="display:none"></span>
+        <button id="btn-go-panel" class="btn" style="display:none">Ir a mi panel</button>
+        <button id="btn-open-login" class="btn btn-primary">Iniciar sesión</button>
+        <button id="btn-logout" class="btn btn-danger" style="display:none">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <div class="kicker">Encuentra tu próximo partido</div>
+      <h1 class="headline">Partidos, complejos y marcas en un solo lugar</h1>
+      <p class="subhead">Conecta con jugadores, descubre torneos y aprovecha ofertas de tus marcas favoritas de pádel.</p>
+      <div class="badges">
+        <div class="badge">Jugadores</div>
+        <div class="badge">Complejos</div>
+        <div class="badge">Marcas</div>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <section class="feed">
+    <div class="card" id="panel-publicidad" style="display:none">
+      <h3>Publicar publicidad (solo locales/marcas)</h3>
+      <form id="form-publicidad">
+        <div class="row">
+          <input type="text" name="marca" placeholder="Nombre de la marca o local" required />
+          <input type="text" name="titulo" placeholder="Título corto" required />
+        </div>
+        <textarea name="descripcion" placeholder="Descripción o promoción" required></textarea>
+        <button type="submit" class="btn btn-primary">Publicar</button>
+      </form>
+    </div>
+
+    <h3 style="margin: 16px 0;">Publicidades</h3>
+    <div id="lista-anuncios" class="grid"></div>
+  </section>
+
+  <script src="./main.js"></script>
+</body>
+</html>
+
+
