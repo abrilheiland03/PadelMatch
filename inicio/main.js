@@ -1,8 +1,14 @@
-// Estado en localStorage
-const anuncios = JSON.parse(localStorage.getItem('anuncios')) || [];
-let usuarioActual = JSON.parse(localStorage.getItem('usuarioActual')) || null; // { nombre, rol }
 
-// Referencias DOM
+const initialAds = [
+  { marca: "Adidas Padel", titulo: "Nueva Colección 2025", descripcion: "Descubre las palas Adipower. Potencia inigualable para tu juego. ¡Oferta de lanzamiento!", autor: "Adidas Padel", autorRol: "marca", ts: Date.now() - 50000 },
+  { marca: "Bullpadel", titulo: "Zapatillas Vertex Comfort", descripcion: "Máximo agarre y amortiguación en la pista. Consigue el modelo de Paquito Navarro.", autor: "Bullpadel", autorRol: "marca", ts: Date.now() - 30000 },
+  { marca: "Club Central Padel", titulo: "¡Liga de Verano Abierta!", descripcion: "Inscripciones disponibles. Categorías masculinas, femeninas y mixtas. Gran premio final.", autor: "Club Central Padel", autorRol: "local", ts: Date.now() - 10000 }
+];
+
+const anuncios = JSON.parse(localStorage.getItem('anuncios')) || initialAds; 
+let usuarioActual = JSON.parse(localStorage.getItem('usuarioActual')) || null; 
+
+
 const formLogin = document.getElementById('form-login');
 const btnOpenLogin = document.getElementById('btn-open-login');
 const btnLogout = document.getElementById('btn-logout');
@@ -38,16 +44,16 @@ function actualizarUIAuth() {
     if (btnGoPanel) btnGoPanel.style.display = 'none';
   }
 
-  // Panel de publicar publicidad solo para rol local
   if (panelPublicidad) {
-    panelPublicidad.style.display = isLogged && usuarioActual.rol === 'local' ? '' : 'none';
+    panelPublicidad.style.display = isLogged && (usuarioActual.rol === 'local' || usuarioActual.rol === 'marca') ? '' : 'none';
   }
 }
 
 function renderizarAnuncios() {
   if (!listaAnuncios) return;
   listaAnuncios.innerHTML = '';
-  anuncios.slice().reverse().forEach((a) => {
+
+  anuncios.slice().sort((a, b) => b.ts - a.ts).forEach((a) => {
     const card = document.createElement('div');
     card.className = 'ad';
     card.innerHTML = `
@@ -62,9 +68,9 @@ function renderizarAnuncios() {
   });
 }
 
-// Eventos
+
 if (formLogin) {
-  // Cambiar el submit por redirección al login dedicado
+
   formLogin.addEventListener('submit', (e) => {
     e.preventDefault();
     window.location.href = '../auth/login.html';
@@ -97,7 +103,7 @@ if (btnGoPanel) {
 if (formPublicidad) {
   formPublicidad.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!usuarioActual || usuarioActual.rol !== 'local') {
+    if (!usuarioActual || (usuarioActual.rol !== 'local' && usuarioActual.rol !== 'marca')) {
       alert('Solo los locales/marcas pueden publicar publicidades.');
       return;
     }
@@ -112,8 +118,6 @@ if (formPublicidad) {
   });
 }
 
-// Inicializar
+
 actualizarUIAuth();
 renderizarAnuncios();
-
-
