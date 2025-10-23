@@ -1,110 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PadelMatch • Jugador</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-  <header>
-    <div class="nav">
-      <div class="brand"><div class="logo">🎾</div> PadelMatch • Jugador</div>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <span id="session-chip" class="muted"></span>
-        <button id="btn-home" class="btn">Inicio</button>
-        <button id="btn-logout" class="btn btn-danger">Cerrar sesión</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="card">
-      <h3>Mi perfil</h3>
-      <div id="perfil-nombre" class="muted"></div>
-      <div>Mi calificación: <span id="perfil-rating" class="rating">☆☆☆☆☆</span></div>
-    </div>
-
-    <div class="card">
-      <h3>Publicar Solicitud</h3>
-      <form id="form-solicitud">
-        <div class="row">
-          <input type="number" name="jugadores" placeholder="Cantidad de jugadores" min="1" max="3" required />
-          <select name="cancha" required>
-            <option value="">Selecciona complejo/cancha</option>
-          </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PadelMatch • Jugador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">🎾</div>
+          PadelMatch • Jugador
         </div>
-        <div class="row">
-          <select name="categoria" required>
-            <option value="">Categoría</option>
-            <option value="1">1 (Primera)</option>
-            <option value="2">2 (Segunda)</option>
-            <option value="3">3 (Tercera)</option>
-            <option value="4">4 (Cuarta)</option>
-            <option value="5">5 (Quinta)</option>
-            <option value="6">6 (Sexta)</option>
-            <option value="7">7 (Séptima)</option>
-          </select>
-          <input type="datetime-local" name="horario" required />
+        <div style="display: flex; gap: 8px; align-items: center">
+          <span id="session-chip" class="muted"></span>
+          <button id="btn-home" class="btn">Inicio</button>
+          <button id="btn-logout" class="btn btn-danger">Cerrar sesión</button>
         </div>
-        <button type="submit" class="btn btn-primary">Publicar</button>
-      </form>
-    </div>
-
-    <div class="card" style="grid-column: 1 / -1;">
-      <h3>Solicitudes Disponibles</h3>
-      <div id="lista-solicitudes" class="list"></div>
-    </div>
-
-    <div class="card" style="grid-column: 1 / -1;">
-      <h3>Vincular archivos (opcional)</h3>
-      <div class="muted">Podés vincular los JSON físicos para leer/escribir usando la File System Access API.</div>
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
-        <button id="btn-link-solicitudes" class="btn">Vincular solicitudes.json</button>
-        <span id="status-solicitudes" class="muted"></span>
       </div>
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
-        <button id="btn-link-canchas" class="btn">Vincular canchas.json</button>
-        <span id="status-canchas" class="muted"></span>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h3>Mi perfil</h3>
+        <div id="perfil-nombre" class="muted"></div>
+        <div>
+          Mi calificación: <span id="perfil-rating" class="rating">☆☆☆☆☆</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Publicar Solicitud</h3>
+        <form id="form-solicitud">
+          <div class="row">
+            <input
+              type="number"
+              name="jugadores"
+              placeholder="Cantidad de jugadores"
+              min="1"
+              max="3"
+              required
+            />
+            <select name="cancha" required>
+              <option value="">Selecciona complejo/cancha</option>
+            </select>
+          </div>
+          <div class="row">
+            <select name="categoria" required>
+              <option value="">Categoría</option>
+              <option value="1">1 (Primera)</option>
+              <option value="2">2 (Segunda)</option>
+              <option value="3">3 (Tercera)</option>
+              <option value="4">4 (Cuarta)</option>
+              <option value="5">5 (Quinta)</option>
+              <option value="6">6 (Sexta)</option>
+              <option value="7">7 (Séptima)</option>
+            </select>
+            <input type="datetime-local" name="horario" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Publicar</button>
+        </form>
+      </div>
+
+      <div class="card" style="grid-column: 1 / -1">
+        <h3>Solicitudes Disponibles</h3>
+        <div id="lista-solicitudes" class="list"></div>
+      </div>
+
+      <div class="card" style="grid-column: 1 / -1">
+        <h3>Vincular archivos (opcional)</h3>
+        <div class="muted">
+          Podés vincular los JSON físicos para leer/escribir usando la File
+          System Access API.
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px">
+          <button id="btn-link-solicitudes" class="btn">
+            Vincular solicitudes.json
+          </button>
+          <span id="status-solicitudes" class="muted"></span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px">
+          <button id="btn-link-canchas" class="btn">
+            Vincular canchas.json
+          </button>
+          <span id="status-canchas" class="muted"></span>
+        </div>
+      </div>
+
+      <!-- Mapa flotante de Córdoba -->
+      <div id="mapa-flotante">
+        <iframe
+          src="https://maps.google.com/maps?q=canchas+de+padel+en+cordoba&t=&z=11&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+          loading="lazy"
+        >
+        </iframe>
       </div>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="logo">🎾</div>
+            <h3>PadelMatch</h3>
+            <p>Conecta con el mundo del pádel.</p>
+            <p class="copyright">
+              &copy; 2024 PadelMatch. Todos los derechos reservados.
+            </p>
+          </div>
 
-  </div>
+          <div class="footer-links">
+            <h4>Explorar</h4>
+            <ul>
+              <li><a href="#">Buscar Partidos</a></li>
+              <li><a href="#">Complejos y Canchas</a></li>
+              <li><a href="#">Torneos y Ligas</a></li>
+              <li><a href="#">Marcas y Ofertas</a></li>
+            </ul>
+          </div>
 
-  <!-- Seed inicial para uso sin servidor (file://) -->
-  <script id="seed-solicitudes" type="application/json">[
-    {
-      "id": "seed-1",
-      "creador": "Lucia",
-      "jugadores": 2,
-      "categoria": "3",
-      "direccion": "Club Padel Centro, Córdoba",
-      "horario": "2025-10-20T19:00",
-      "inscriptos": ["Agus"],
-      "cuposRestantes": 1
-    },
-    {
-      "id": "seed-2",
-      "creador": "Martin",
-      "jugadores": 1,
-      "categoria": "6",
-      "direccion": "Poli General Paz",
-      "horario": "2025-10-21T18:30",
-      "inscriptos": [],
-      "cuposRestantes": 1
-    }
-  ]</script>
-  <script id="seed-canchas" type="application/json">[
-    {"nombre":"Club Padel Centro","direccion":"Av. Siempre Viva 123","canchas":6,"horarios":"08-23"},
-    {"nombre":"Poli General Paz","direccion":"Calle Luna 456","canchas":4,"horarios":"09-22"},
-    {"nombre":"Padel Norte","direccion":"Ruta 9 km 5","canchas":8,"horarios":"08-00"}
-  ]</script>
+          <div class="footer-links">
+            <h4>Soporte</h4>
+            <ul>
+              <li><a href="#">Centro de Ayuda</a></li>
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </div>
 
-  <script src="./main.js"></script>
-</body>
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">📸</a>
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Seed inicial para uso sin servidor (file://) -->
+    <script id="seed-solicitudes" type="application/json">
+      [
+        {
+          "id": "seed-1",
+          "creador": "Lucia",
+          "jugadores": 2,
+          "categoria": "3",
+          "direccion": "Club Padel Centro, Córdoba",
+          "horario": "2025-10-20T19:00",
+          "inscriptos": ["Agus"],
+          "cuposRestantes": 1
+        },
+        {
+          "id": "seed-2",
+          "creador": "Martin",
+          "jugadores": 1,
+          "categoria": "6",
+          "direccion": "Poli General Paz",
+          "horario": "2025-10-21T18:30",
+          "inscriptos": [],
+          "cuposRestantes": 1
+        }
+      ]
+    </script>
+    <script id="seed-canchas" type="application/json">
+      [
+        {
+          "nombre": "Club Padel Centro",
+          "direccion": "Av. Siempre Viva 123",
+          "canchas": 6,
+          "horarios": "08-23"
+        },
+        {
+          "nombre": "Poli General Paz",
+          "direccion": "Calle Luna 456",
+          "canchas": 4,
+          "horarios": "09-22"
+        },
+        {
+          "nombre": "Padel Norte",
+          "direccion": "Ruta 9 km 5",
+          "canchas": 8,
+          "horarios": "08-00"
+        }
+      ]
+    </script>
+
+    <script src="./main.js"></script>
+  </body>
 </html>
-
-

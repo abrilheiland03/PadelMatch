@@ -62,12 +62,11 @@ header {
 .btn-danger { background: linear-gradient(135deg, #ff9c9c, var(--danger)); color: #1a0d0d; border: none; }
 
 .hero {
-  max-width: 1100px;
+  max-width: 70%;
   margin: 26px auto 10px;
   padding: 24px 20px 8px;
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 24px;
+  justify-content: center;
+
 }
 .hero-card {
   background: linear-gradient(180deg, rgba(35,196,105,0.08), rgba(35,196,105,0.02));
@@ -75,6 +74,7 @@ header {
   border-radius: 18px;
   padding: 24px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  
 }
 .kicker { color: var(--accent); font-weight: 600; letter-spacing: 1px; font-size: .9rem; }
 .headline { font-size: clamp(28px, 4.4vw, 48px); margin: 10px 0 8px; line-height: 1.05; }
